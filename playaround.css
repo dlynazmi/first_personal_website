@@ -1,0 +1,43 @@
+body{
+	background-color: #FFFFFF;
+}
+
+#main{
+	background-color:inherit;
+	position: relative;
+}
+
+#frame{
+	background-color: #FFAAFF;
+	position: relative;
+	margin:auto;
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+}
+
+#btn1{
+	float:right;
+}
+
+#btn2{
+	float:left;
+}
+
+#slideshow{
+	position: relative;
+}
+
+#slideshow img#book1{
+	position:absolute;
+	top:100px;
+	left:150px;
+}
+
+#slideshow img#book2{
+	/*display:none;*/
+	position:absolute;
+	top: 100px;
+	left: 400px;
+	
+}

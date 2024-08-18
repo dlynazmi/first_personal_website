@@ -1,0 +1,297 @@
+html, body {
+	margin:0px; padding:0px;
+	background-color:#131211;
+	height:100%;
+}
+
+#main {
+	background-color:#c4c0be;
+	position: relative;
+	min-height:100%;
+}
+
+#main .container{
+	position: relative;
+	background-image:url(images/background_main.jpg);
+	background-attachment:scroll;
+	background-repeat:no-repeat;
+	margin:auto;
+	height: 960px;
+	width: 1024px;
+}
+
+a:link{
+	color: black;
+	text-decoration:none;
+}
+
+a:hover{
+	color:red;
+}
+
+a:visited{
+	color:purple;
+}
+
+/*styling the menu*/
+
+#menu{
+	position:absolute;
+	/*border:1px solid black;*/
+	top:40%;
+	left:30%;
+	right:30%;
+	font-family:"Lucida Calligraphy", serif;
+	font-size: x-small;
+}
+
+
+#menu .left_menu{
+	float: left;
+	font-weight: bold;
+	width:15%;
+	text-align:center;
+}
+
+
+#menu .right_menu{
+	float: right;
+	font-weight: bold;
+	width:15%;
+	text-align:center;
+}
+
+
+#menu .home_menu{
+	position: absolute;
+	font-weight: bolder;
+	text-align: center; 
+	left: 30%;
+	right: 30%;
+}
+
+/*frame for displaying the contents*/
+
+#info_frame{
+	position: relative;
+	/*background-color: #c8dbfc;*/
+	/*set the background transparent without affecting its children*/
+	background: rgb(255,255,255) transparent;
+	background: rgba(255,255,255, 0.5);
+	/*for IE*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FFFFFFF, endColorstr=#CCFFFFFF);
+	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FFFFFFF, endColorstr=#CCFFFFFF)";
+	top: 42%;
+	left: 20%;
+	width: 60%;
+	height: 40%;
+	border: 5px solid black;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	/*opacity:0.6;*//*will make the children transparent as well*/
+	/*-moz-border-radius-topleft --for mozilla older version
+	-webkit-border-top-right-radius --for safari older version */
+	overflow: auto;
+	
+}
+
+
+h1{
+	position:relative;
+	text-align: center;
+	font-family:"Lucida Calligraphy", serif;
+	font-size: large;
+	text-decoration: underline;
+	top: 10px;
+}
+
+#home_content{
+	position:relative;
+	text-align: center;
+	top: 10%;
+	left:20%;
+	width:60%;
+	font-family:"Lucida Calligraphy", serif;
+	font-size: small;
+}
+
+#home_frame{
+	position:absolute;
+	border: 1px dotted black;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+#home_title{
+	position:absolute;
+	text-align: center;
+	padding:25px;
+	left:10%;
+}
+
+#quotes{
+	float:left;
+	width:250px;
+	font-size:x-small;
+}
+
+#who_said{
+	clear:both;
+	
+}
+
+#about_content{
+	position:absolute;
+	top: 20%;
+	left:10%;
+	right:10%;
+	
+}
+
+#about_image{
+	float:left;
+	padding: 10px;
+}
+
+#about_info{
+	font-family:"Lucida Calligraphy", serif;
+	font-size: small;
+	text-align:justify;
+}
+
+#contact_content{
+	position:absolute;
+	text-align: center;
+	top: 20%;
+	left:20%;
+	width:60%;
+	font-family:"Lucida Calligraphy", serif;
+	font-size: small;
+	
+	/*border-radius: 20px;
+	border-right:5px groove #4f5050;
+	border-left:5px groove #4f5050;*/
+}
+
+#link_contact{
+	position:absolute;
+	width:80%;
+	top:75%;
+	left:22%
+}
+
+#fb{
+	float:left;
+	padding:5px;
+}
+
+#twitter{
+	float:left;
+	padding:5px;
+}
+
+#you_tube{
+	float:left;
+	padding:5px;
+}
+
+#linkedIn{
+	float:left;
+	padding:5px;
+}
+
+#skills_content{
+	position:absolute;
+	top: 20%;
+	left:10%;
+	right:10%;
+	
+}
+
+#skills_menu{
+	float:left;
+	padding: 5px;
+	width:30%;
+	font-family:"Lucida Calligraphy", serif;
+	font-size: small;
+	color:#000;
+}
+
+#skills_menu p{
+	text-decoration: underline;
+}
+
+#skills_nav{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+/*styling the menu*/
+/*styling the <li> elements */
+#skills_nav li{
+	display:block;
+	position:relative;
+	width:100px;
+	background:#6ea8a1;
+	margin: 1px 0;
+}
+
+/*styling the parent's menu*/
+#skills_nav li p{
+	display:block;
+	font-weight: 700;
+	text-align: center;
+}
+
+#skills_nav li a:hover{
+	color: #fff;
+}
+
+.tooltip{
+	display:none;
+	font-family:"Lucida Calligraphy", serif;
+	font-size:x-small;
+	width: 250px;
+	position:absolute;
+	border: 1px solid #000000;
+	background:#86d8cf;
+	padding: 2px 6px;
+	color: #990000;
+}
+
+/*styling the <ul> elements*/
+#skills_nav ul{
+	display:none;
+	position: absolute;
+	list-style: none;
+	margin: 1px 0;
+	z-index: 500;
+	left:50px;
+}
+
+
+
+#skills_info{
+	float: left;
+	position:relative;
+	font-family:"Lucida Calligraphy", serif;
+	font-size: small;
+	text-align:justify;
+	padding: 5px;
+	width:50%;
+	right: 0;
+	border:1px solid black;
+	border-radius:20px;
+}
+
+
+#copyright{
+	position: absolute;
+	text-align:center;
+	font-family:"Lucida Calligraphy", serif;
+	font-weight: bold;
+	font-size: xx-small;
+	bottom:0;
+	width:100%;
+	
+}

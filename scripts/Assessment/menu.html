@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="menu.css" />
+		<script src="jquery-1.9.1.min.js"></script>
+		<title>Menu tutorial</title>
+	</head>
+
+	<body>
+		<script type="text/javascript"><!--	
+		$(document).ready(function (){
+			$('#nav li').hover(
+				function(){
+					//show its submenu
+					$('ul', this).stop().slideDown(100);
+				},
+				function(){
+					//hide its submenu
+					$('ul',this).stop().slideUp(100);
+				}
+			);
+		});
+		//--></script>
+		
+		<ul id="navbar">
+			<li><a href="#">Item one</a><ul>
+				<li><a href="#">Subitem one</a></li>
+				<li><a href="#">Subitem two</a></li>
+				<li><a href="#">Subitem three</a></li></ul>
+			</li>
+		</ul>
+	
+		<ul id="nav">
+			<li><a href="#">Parent 01</a></li>
+			<li><a href="#" class="selected">Parent 02</a>
+				<ul>
+					<li><a href="#">Item 01</a></li>
+					<li><a href="#" class="selected">Item 02</a></li>
+					<li><a href="#">Item 03</a></li>
+				</ul>
+				<div class="clear"></div>
+			</li>
+			<li><a href="#">Parent 03</a>
+				<ul>
+					<li><a href="#">Item 04</a></li>
+				</ul>
+				<div class="clear"></div>
+			</li>
+		</ul>
+	</body>
+</html>

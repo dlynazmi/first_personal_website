@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http://equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>~play around with JQuery~</title>
+	<link href="playaround.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="main">
+		<div id="frame">
+		<div>		
+			<button type="button" id="btn1">Next</button>
+			<button type="button" id="btn2">Previous</button>
+			<div id="slideshow">
+				<img id="book1" src="images/PF1.jpg" align="middle"
+					width="100" height="150" alt="Teens Category"/>
+				<img id="book2" src="images/dua_wajah.jpg" align="middle"
+					width="100" height="150" alt="YA Category"/>
+			</div>
+		</div>
+	</div>
+	
+	<script src="jquery-1.9.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$("#book1").animate({left:"-100px"},500);
+			$("#book2").animate({left:"150px"},500);
+		});
+		$("#btn2").click(function(){
+			$("#book1").animate({left:"150px"},500);
+			$("#book2").animate({left:"400px"},500);
+		});
+	});
+	</script>
+	
+</body>
+</html>

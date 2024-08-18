@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="absoluteStyle.css" />
+		<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="ddaccordion.js"></script>
+		<title>Absolute Positioning</title>
+	</head>
+
+	<body>
+	
+	<script type="text/javascript"><!--
+		function ReplaceContentInContainer(id,content){
+			var container = document.getElementById(id);
+			container.innerHTML = content;
+		}
+	//--></script>
+	
+	<div id="border">
+		<h1>Positioning with CSS</h1>
+		<h2>Absolute Positioning</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis mi at libero. Praesent libero. Pellentesque libero massa, facilisis eget, rhoncus vitae, blandit ac, diam. Sed sit amet nisi et dui placerat convallis. Nam eros mauris, euismod nec, aliquam et, pharetra vel, ipsum. Aliquam erat volutpat. Ut malesuada posuere purus. Vivamus lobortis, sem id luctus ornare, massa lorem ullamcorper ante, ut consequat quam nunc a tortor. Nullam congue, libero non semper luctus, massa metus semper ante, quis viverra massa sapien at orci. Sed ut purus non diam sollicitudin porttitor.</p>
+		<div id="image">
+			<img src="BustersNose.jpg" width="200" height="200" alt="Buster the Fox Terrier">
+		</div>
+	</div>
+	<div id="example1div" style="border-style:solid; padding:10px; text-align:center;">
+		I will be replaced when you click.
+	</div>
+
+	<a href="javascript:Replace()">
+		Click me to replace content in the container
+	</a>
+	
+	<script type="text/javascript"><!--
+		function Replace(){	
+			var content = "hello hello dlyn";
+			ReplaceContentInContainer('example1div',content);
+		}
+	//--></script>
+	
+	<div id="example2div" style="border-style:solid; padding:20px;">
+		Replace me with something please?
+	</div>
+	
+	<script type="text/javascript"><!--
+		function EffectReplacement(it){
+			re = /script/ig;
+			var content = it.value.replace(re,'s.c.r.i.p.t');
+			ReplaceContentInContainer('example2div',content);
+		}
+	//--></script>
+	<form style="margin:0">
+		<textarea cols="36" rows="4" name="new" style="width:350px;"
+			onchange="EffectReplacement(this)" wrap="on">
+		</textarea><br />
+		<input type="button" value="Change Content" style=width:350px;">
+	</form>
+	
+	<div id="example3div" style="border-style:dotted; padding:10px;
+			font-size:24px; width=200px; text-align:center">
+		Countdown
+	</div>
+	
+	<script type="text/javascript"><!--
+		var containerID = "example3div";
+		var number = 100;
+		var timerID = setInterval("CountdownTimer()",1000);
+		function CountdownTimer(){
+			if (number>1){
+				number--;
+				ReplaceContentInContainer(containerID,number);
+				}
+			else{
+				clearInterval(timerID);
+				ReplaceContentInContainer(containerID,'B O O M');
+				}
+		}
+	//--></script>
+	
+	<div id = "div1" style="display:block" > 
+		Wanna see magic?
+	</div>
+	<div id = "div2" style="display:none" >
+		Sorry.. no magic for you :P
+	</div>
+	<div id = "div3" style="display:none" >
+		Say your wish, may it come true.
+	</div>
+	<div id = "div4" style="display:none" >
+		What magic? ARe you kiddin me???
+	</div>
+	<a href="javascript:replace('div1')"> Div1  </a>
+	<a href="javascript:replace('div2')"> Div2  </a>
+	<a href="javascript:replace('div3')"> Div3  </a>
+	<a href="javascript:replace('div4')"> Div4  </a>
+	<script type="text/javascript"><!--
+		function replace(id){
+			//document.getElementById("div1").style.display="none";
+			//document.getElementById("div2").style.display="block";
+			if (id == "div1"){
+				document.getElementById("div1").style.display="block";
+				document.getElementById("div2").style.display="none";
+				document.getElementById("div3").style.display="none";
+				document.getElementById("div4").style.display="none";
+			}
+			
+			else if (id == "div2"){
+				document.getElementById("div1").style.display="none";
+				document.getElementById("div2").style.display="block";
+				document.getElementById("div3").style.display="none";
+				document.getElementById("div4").style.display="none";
+			}
+			
+			else if (id == "div3"){
+				document.getElementById("div1").style.display="none";
+				document.getElementById("div2").style.display="none";
+				document.getElementById("div3").style.display="block";
+				document.getElementById("div4").style.display="none";
+			}
+			
+			else if (id == "div4"){
+				document.getElementById("div1").style.display="none";
+				document.getElementById("div2").style.display="none";
+				document.getElementById("div3").style.display="none";
+				document.getElementById("div4").style.display="block";
+			}
+		}
+		
+		var numdivs = 4;
+		function showDiv(which){
+			for(i=0;i<numdivs;i++){
+				document.getElementById("div"+i).style.display="none";
+			}
+			document.getElementById("div"+which).style.display="block";
+		}
+	//--></script>
+	
+	<script type="text/javascript">
+
+ddaccordion.init({
+	headerclass: "headerbar", //Shared CSS class name of headers group
+	contentclass: "submenu", //Shared CSS class name of contents group
+	revealtype: "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false
+	defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+	onemustopen: true, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", "selected"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "normal", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+</script>
+<div class="urbangreymenu">
+
+<h3 class="headerbar"><a href="http://www.dynamicdrive.com/style/">CSS Library</a></h3>
+<ul class="submenu">
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C1/">Horizontal CSS Menus</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C2/">Vertical CSS Menus</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C4/">Image CSS</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C6/">Form CSS</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C5/">DIVs and containers</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C7/">Links & Buttons</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C8/">Other</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/all/">Browse All</a></li>
+</ul>
+
+<h3 class="headerbar"><a href="http://www.javascriptkit.com">JavaScript Kit</a></h3>
+<ul class="submenu">
+<li><a href="http://www.javascriptkit.com/cutpastejava.shtml" >Free JavaScripts</a></li>
+<li><a href="http://www.javascriptkit.com/javatutors/">JavaScript tutorials</a></li>
+<li><a href="http://www.javascriptkit.com/jsref/">JavaScript Reference</a></li>
+<li><a href="http://www.javascriptkit.com/dhtmltutors/">DHTML & CSS</a></li>
+<li><a href="http://www.javascriptkit.com/howto/">Web Design</a></li>
+<li><a href="http://www.javascriptkit.com/java/">Free Java Applets</a></li>		
+</ul>
+
+</div>
+	</body>
+</html>
